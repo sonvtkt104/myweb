@@ -1,15 +1,13 @@
-
-
 export const sideBar = [
     {
         name: "Bếp",
         group: [
             { item: "Xoong, Nồi, Chảo", link: "xoong-noi" },
-            { item: "Giá, Kệ Đa Năng", link: "phu-kien-bep" },
-            { item: "Phụ Kiện Bếp", link: "phu-kien-bep-1" },
+            { item: "Giá, Kệ Đa Năng", link: "gia-ke-da-nang" },
+            { item: "Phụ Kiện Bếp", link: "phu-kien-bep" },
             { item: "Thìa, Đũa", link: "thia-dua" },          
         ],
-        link: ""
+        link: "bep"
     },
     {
         name: "Picnic Day",
@@ -22,7 +20,7 @@ export const sideBar = [
             {item: "Cốc", link: "coc"},
             {item: "Ly", link: "ly"},
         ],
-        link: ""
+        link: "coc-ly"
     },
     {
         name: "Trà Chiều",
@@ -31,7 +29,7 @@ export const sideBar = [
             {item: "Trà Cụ", link: "tra-cu"},
             {item: "Tea Party", link: "tea-party"},
         ],
-        link: ""
+        link: "tra-chieu"
     },
     {
         name: "Chăm Sóc Chúng Mình",
@@ -39,7 +37,7 @@ export const sideBar = [
             {item: "Cafe Tỉnh Táo", link: "cafe-tinh-tao"},
             {item: "Thư Giãn", link: "thu-gian"},
         ],
-        link: ""
+        link: "cham-soc-chung-minh"
     },
     {
         name: "Thiền Định An Yên",
@@ -47,7 +45,7 @@ export const sideBar = [
             {item: "Trầm", link: "tram"},
             {item: "Set Đốt Trầm", link: "set-dot-tram"},
         ],
-        link: ""
+        link: "thien-dinh-an-yen"
     },
     {
         name: "Mùi Hương",
@@ -55,7 +53,7 @@ export const sideBar = [
             {item: "Nến Thơm", link: "nen-thom"},
             {item: "Tinh Dầu, Túi Thơm", link: "tinh-dau-tui-thom"},
         ],
-        link: ""
+        link: "mui-huong"
     },
     {
         name: "Trang Trí Nhà Cửa",
@@ -63,7 +61,7 @@ export const sideBar = [
             {item: "Khăn Trải Bàn, Thảm", link: "khan-trai-ban-tham"},
             {item: "Bình Cắm Hoa", link: "binh-cam-hoa"},
         ],
-        link: ""
+        link: "trang-tri-nha-cua"
     },
     {
         name: "Đồ Cá Nhân",
@@ -78,102 +76,55 @@ export const sideBar = [
 ]
 
 export const products = {
+    "bep" : [
+        "am-picnic",
+        "am-trang-men-do-2-4l",
+        "am-trang-men-meo-1-1l",
+        "am-trang-men-mickey",
+        "am-trang-men-xanh-1-1l",
+        "bep-nuong-con-tron",
+        "bep-nuong-dien-korea",
+        "bep-picnic-bag",
+        "gia-de-dao", 
+        "gia-dia-3-ngan",
+        "gia-up-bat-black-and-white",
+        "gia-up-bat-night",
+        "gio-cookies"
+    ],
     "xoong-noi": [
-        {
-            image: "https://product.hstatic.net/200000015764/product/z2377963455993_5d3e2cf9ee67fbc45b8af351d14085dc_d088f97fdc124971858f7b6a29bdefab_grande.jpg",
-            name: "Ấm Picnic",
-            price: 370,
-            link: "am-picnic"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/z2273282265941_a12fafffe01d7d8c68dff7197e052564_1e75938dc6984b2db484e5ae990a6463_grande.jpg",
-            name: "Ấm Tráng Men Đỏ 2,4L",
-            price: 760,
-            link: "am-trang-men-do-2-4l"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/z2904524470518_d83df563ed854e8c51570e1e2299f583_e898443fe17849c7addd8cf58aff87b5_grande.jpg",
-            name: "Ấm Tráng Men Mèo (1,1L)",
-            price: 680,
-            link: "am-trang-men-meo-1-1l"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/z2166339035249_b9ad1fe2d0601166e921cab8d7e3140b_0777bc8a9b8546fa89dc54b9ce8c130f_grande.jpg",
-            name: "Ấm Tráng Men Mickey",
-            price: 545,
-            link: "am-trang-men-mickey"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/z2904524524356_e95ff1acd5fb115d18bfc1ffc6dbdc4c_2278f6ff0c7940c7b6eb7f6479c9e0b8_grande.jpg",
-            name: "Ấm Tráng Men Xanh (1,1L)",
-            price: 620,
-            link: "am-trang-men-xanh-1-1l"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/4d3cbeaf-51f6-4311-9a38-2d803f70ef4b_9b426b983dbb4aa2acaae7e66c67375d_grande.jpg",
-            name: "Bếp Nướng Cồn Tròn",
-            price: 345,
-            link: "bep-nuong-con-tron"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/3039f0c1-f80b-4513-9704-5813f5ef397b_b672bd767134419492510854c506ec59_grande.jpg",
-            name: "Bếp Nướng Điện Korea",
-            price: 1120,
-            link: "bep-nuong-dien-korea"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/z2377963383185_c465153c793ff11d202062f2acfea408_bea0e9df2dd24b47aa560ca1b1ef772a_grande.jpg",
-            name: "Bếp Picnic Bag",
-            price: 1370,
-            link: "bep-picnic-bag"
-        }
+        "am-picnic",
+        "am-trang-men-do-2-4l",
+        "am-trang-men-meo-1-1l",
+        "am-trang-men-mickey",
+        "am-trang-men-xanh-1-1l",
+        "bep-nuong-con-tron",
+        "bep-nuong-dien-korea",
+        "bep-picnic-bag"
     ],
     "phu-kien-bep": [
-        {
-            image: "https://product.hstatic.net/200000015764/product/601ae62f-deff-418c-96c3-1b824f59c91b_857c13a63c6f449390e26ee651b773c5_grande.jpg",
-            name: "Giá Để Dao",
-            price: 320,
-            link: "gia-de-dao"
-        }, 
-        {
-            image: "https://product.hstatic.net/200000015764/product/4dc04a09-7cde-46d3-9a0b-c8a8e26acc1f_b781689852cf4addaf7e99e278574536_grande.jpg",
-            name: "Giá đĩa 3 ngăn",
-            price: 295,
-            link: "gia-dia-3-ngan"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/ke_up_bat_74f6ffb268b248159ae5b1ed954674de_grande.jpg",
-            name: "Giá Úp Bát Black and White",
-            price: 395,
-            link: "gia-up-bat-black-and-white"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/638fbd89-af13-411c-a96a-d6d9b9ff4260_c34dee2f5fd14156aeeb24d20c16aa24_grande.jpg",
-            name: "Giá Úp Bát Night",
-            price: 680,
-            link: "gia-up-bat-night"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/9ed9603e-79fe-4722-a37e-9fb1eb028145_ceb996986cdb4709b05297d287e60938_grande.jpg",
-            name: "Giỏ Cookies",
-            price: 265,
-            link: "gio-cookies"
-        }
+        "gia-de-dao", 
+        "gia-dia-3-ngan",
+        "gia-up-bat-black-and-white",
+        "gia-up-bat-night",
+        "gio-cookies"
     ],
     "picnic-day" : [
-        {
-            image: "https://product.hstatic.net/200000015764/product/104043828_247636563200136_8760368985925987794_n_5f873773c38c486a8735de9bcd4e900b_grande.jpg",
-            name: "Khăn Trải Bàn Ren Tuyết",
-            price: 195,
-            link: "khan-trai-ban-ren-tuyet"
-        },
-        {
-            image: "https://product.hstatic.net/200000015764/product/z2413530324395_cf5a742d453defa80b723f774eb6ed5d_5a43017c7f514061971eb197bee40830_grande.jpg",
-            name: "Thảm Picnic Hoạ Tiết",
-            price: 780,
-            link: "tham-picnic-hoa-tiet"
-        }
-    ] 
+        "khan-trai-ban-ren-tuyet",
+        "tham-picnic-hoa-tiet"
+    ],
+    "coc-ly" : [
+        "coc-linh-lan-hong-350ml"
+    ],
+    "cham-soc-chung-minh" : [
+        "bo-am-anh-dao-men-xanh"
+    ],
+    "trang-tri-nha-cua" : [
+        "binh-hoa-nut-luu-ly"
+    ],
+    "tra-chieu" : [
+        "khay-mut-chup-thuy-tinh-2-ngan",
+        "bo-am-sen-tui-vai"
+    ]
 }
 
 export const productDetail = {

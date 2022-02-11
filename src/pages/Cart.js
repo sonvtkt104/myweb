@@ -3,23 +3,25 @@ import { Link } from "react-router-dom";
 
 import CartProduct from "../components/CartProduct";
 import HeaderPage from "../components/HeaderPage";
+import { useStore} from "../store"
 
 function Cart() {
     const [data, setData] = useState(JSON.parse(localStorage.getItem("cart")))
+    const [state, dispatch] = useStore()
 
     const quantity = useMemo(() => {
-        const result = data.reduce((pre, cur) => {
+        const result = state.cart.reduce((pre, cur) => {
             return pre + cur.quantity
         }, 0)
         return result
-    }, [data])
+    }, [state.cart])
 
     const total = useMemo(() => {
-        const result = data.reduce((pre, cur) => {
+        const result = state.cart.reduce((pre, cur) => {
             return pre + cur.price * cur.quantity
         }, 0) 
         return result
-    }, [data])
+    }, [state.cart])
 
     return (
         <div className="cart">

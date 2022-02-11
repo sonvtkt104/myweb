@@ -19,10 +19,10 @@ function Sidebar() {
                     sideBar.map((category, index) => (
                         <li key={index}>
                             {
-                                category.group.length != 0 
+                                category.group.length !== 0 
                                 ?(
                                     <>
-                                        <Link onClick={() => handleClick(index)} to="">
+                                        <Link onClick={() => handleClick(index)} to={category.link}>
                                             {category.name + ' '} 
                                             <span>
                                                 <i ref={i => iRef.current[index] = i} className="fas fa-chevron-right"></i>

@@ -3,6 +3,13 @@ import { useStore, actions} from '../store'
 
 function CartSubProduct() {
     const [state, dispatch] = useStore()
+
+    const handleDelete = (index) => {
+        state.cart.splice(index, 1)
+        const newData = state.cart.slice()
+        localStorage.setItem("cart", JSON.stringify(newData))
+        dispatch(actions.setCart(newData))
+    }
  
     return (
         <div>
@@ -15,7 +22,7 @@ function CartSubProduct() {
                             <span>{product.quantity}</span>
                             <p>{product.price},000₫</p>
                         </div>
-                        <i className="fas fa-times"></i>
+                        <i onClick={() => handleDelete(index)} className="fas fa-times"></i>
                     </div> 
                 ))
             }

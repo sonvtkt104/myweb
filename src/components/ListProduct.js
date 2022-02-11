@@ -1,13 +1,15 @@
-import { useEffect, useRef, useState, useLayoutEffect, useMemo } from "react"
+import { useEffect,  useState, useMemo } from "react"
 import { useParams } from "react-router-dom"
 
-import {products} from "../data"
+import {products, productDetail, sideBar} from "../data"
 import ItemProduct from "./ItemProduct"
 
-function ListProduct({name}) {
+function ListProduct() {
     const {collectionKey} = useParams()
 
-    const [list, setList] = useState([])
+    console.log(collectionKey)
+
+    const [list, setList] = useState([])   //list link product
     const [sort, setSort] = useState("0")
 
     //lay data theo params
@@ -20,10 +22,10 @@ function ListProduct({name}) {
             }
         } else {
             let arr = [];
-            for(let key in products) {
+            for(let key in productDetail) {
                 arr = [
                     ...arr,
-                    ...products[key],
+                    key,
                 ]
             }
             setList(arr)
@@ -38,32 +40,32 @@ function ListProduct({name}) {
             case "0":
                 console.log("gia tang dan")
                 newList = list.sort((a, b) => {
-                    if(a.price > b.price) return 1
-                    if(a.price < b.price) return -1
+                    if(productDetail[a].price > productDetail[b].price) return 1
+                    if(productDetail[a].price < productDetail[b].price) return -1
                     return 0
                 })              
                 return newList
             case "1":
                 console.log("gia giam dan")
                 newList = list.sort((a, b) => {
-                    if(a.price > b.price) return -1
-                    if(a.price < b.price) return 1
+                    if(productDetail[a].price > productDetail[b].price) return -1
+                    if(productDetail[a].price < productDetail[b].price) return 1
                     return 0
                 })              
                 return newList
             case "2":
                 console.log("Ten A-Z")
                 newList = list.sort((a, b) => {
-                    if(a.name > b.name) return 1
-                    if(a.name < b.name) return -1
+                    if(productDetail[a].name > productDetail[b].name) return 1
+                    if(productDetail[a].name < productDetail[b].name) return -1
                     return 0
                 })              
                 return newList
             case "3":
                 console.log("Tên Z-A")
                 newList = list.sort((a, b) => {
-                    if(a.name > b.name) return -1
-                    if(a.name < b.name) return 1
+                    if(productDetail[a].name > productDetail[b].name) return -1
+                    if(productDetail[a].name < productDetail[b].name) return 1
                     return 0
                 })              
                 return newList
@@ -72,16 +74,27 @@ function ListProduct({name}) {
         }
     }, [sort, list])
 
-    console.log(sort)
-    console.log(list)
+    const categoryName = useMemo(() => {
+        if(collectionKey) {
+            if(collectionKey === "tet-du-day") return "Tết Đủ Đầy"
+            for(let i = 0; i < sideBar.length ; i++) {
+                if(collectionKey === sideBar[i].link) {
+                    return sideBar[i].name
+                } else {
+                    for(let j = 0; j < sideBar[i].group.length; j++) {
+                        if(sideBar[i].group[j].link === collectionKey)
+                            return sideBar[i].group[j].item
+                    }
+                }
+            }
+        } else return "Tất cả sản phẩm"
+    }, [collectionKey]) 
 
     return (
         <div className="list-product">
             <div className="list-product-header flex">
-                <h1>Tất cả sản phẩm</h1>
+                <h1>{categoryName}</h1>
                 <select 
-                    name="" 
-                    id="" 
                     value={sort}
                     onChange={e => setSort(e.target.value)}
                 >
@@ -92,17 +105,17 @@ function ListProduct({name}) {
                 </select>
             </div>
             {
-                sorted.length != 0 
+                sorted.length !== 0 
                 ? (
                     <div className="list-product-content flex">
                         {
-                            sorted.map((product, index) => (
+                            sorted.map((link, index) => (
                                 <ItemProduct
                                     key={index}
-                                    image={product.image}
-                                    name={product.name}
-                                    price={product.price}
-                                    link={product.link}
+                                    image={productDetail[link].image[0].replace("compact", "master")}
+                                    name={productDetail[link].name}
+                                    price={productDetail[link].price}
+                                    link={link}
                                 />
                             ))
                         }

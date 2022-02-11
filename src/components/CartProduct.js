@@ -34,7 +34,7 @@ function CartProduct({data, setData}) {
     return (
         <div className="list_product_cart">
             {
-                data && data.map((product, index) => (
+                state.cart && state.cart.map((product, index) => (
                     <div key={index} className="flex">
                         <Link to={`/product/${product.link}`}><img src={product.image} alt="" /></Link>
                         <div className="flex-col">

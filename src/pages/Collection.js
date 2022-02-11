@@ -14,7 +14,7 @@ function Collection() {
             </div>
             <div className="flex">
                 <Sidebar />
-                <ListProduct name="hue" />
+                <ListProduct />
             </div>
         </div>
     )
